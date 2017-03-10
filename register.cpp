@@ -52,9 +52,9 @@ bool Register :: ComparatorID :: operator ()(int i1,int i2) const
 }
 bool Register ::ComparatorItem :: operator ()(int i1, int i2) const
 {
-    std :: cout << i1 << " " << i2 << " " << data->size()<< std :: endl;
-    return true;
-    /*unsigned int minLen = ((*data)[i1].item.length() > (*data)[i2].item.length()) ? (*data)[i2].item.length() : (*data)[i1].item.length();
+    //std :: cout << i1 << " " << i2 << " " << (*data)[i2].getItem()<< std :: endl;
+    //return false;
+   unsigned int minLen = ((*data)[i1].item.length() > (*data)[i2].item.length()) ? (*data)[i2].item.length() : (*data)[i1].item.length();
     for(unsigned int i = 0; i < minLen; i++)
     {
         if(((*data)[i1].item)[i] < ((*data)[i2].item)[i])
@@ -62,11 +62,10 @@ bool Register ::ComparatorItem :: operator ()(int i1, int i2) const
         else if(((*data)[i1].item)[i] > ((*data)[i2].item)[i])
             return false;
     }
-    if(((*data)[i1].item).size() >= ((*data)[i2].item).size())
-        return true;
-    else
+   if(((*data)[i1].item).length() > ((*data)[i2].item).length())
+       return true;
+   else
         return false;
-        */
 }
 bool Register :: ComparatorPrice :: operator ()(int i1, int i2)const
 {

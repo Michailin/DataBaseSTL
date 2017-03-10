@@ -42,9 +42,9 @@ DataBase::DataBase(const char *pathToFile) throw (DataBaseException)
     //std :: sort(sortedByData.begin(),sortedByData.end(),Register :: ComparatorData(&data));
     //std :: sort(sortedByItem.begin(),sortedByItem.end(),Register :: ComparatorItem());
     std :: cout << "HI" << std :: endl;
-    std :: sort(sortedByID.begin(),sortedByID.end(),Register :: ComparatorItem(&data));
-    for(int i = 0; i < sortedByID.size(); i++)
-        std :: cout << data[sortedByID[i]].getPrice()<< std :: endl;
+    std :: sort(sortedByItem.begin(),sortedByItem.end(),Register :: ComparatorItem(&data));
+    for(int i = 0; i < sortedByItem.size(); i++)
+        std :: cout << data[sortedByItem[i]].getItem()<< std :: endl;
 
     //std :: sort(sortedByPrice.begin(),sortedByPrice.begin(),Register :: ComparatorPrice);
     //for(std :: vector <Register &> :: iterator it = sortedByData.begin();it < sortedByData.end();it++)
