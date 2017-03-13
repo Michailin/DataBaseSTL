@@ -33,28 +33,19 @@ DataBase::DataBase(const char *pathToFile) throw (DataBaseException)
         r.setPrice(price);
         r.setData(data1);
         data.push_back(r);
-        sortedByData.push_back(j);
-        sortedByID.push_back(j);
-        sortedByItem.push_back(j);
-        sortedByPrice.push_back(j);
+        //sortedByData.push_back(j);
+        //sortedByID.push_back(j);
+        //sortedByItem.push_back(j);
+        //sortedByPrice.push_back(j);
         j++;
     }
-    //std :: sort(sortedByData.begin(),sortedByData.end(),Register :: ComparatorData(&data));
-    //std :: sort(sortedByItem.begin(),sortedByItem.end(),Register :: ComparatorItem());
-    std :: cout << "HI" << std :: endl;
+    std :: sort(sortedByData.begin(),sortedByData.end(),Register :: ComparatorData(&data));
     std :: sort(sortedByItem.begin(),sortedByItem.end(),Register :: ComparatorItem(&data));
-    for(int i = 0; i < sortedByItem.size(); i++)
-        std :: cout << data[sortedByItem[i]].getItem()<< std :: endl;
-
-    //std :: sort(sortedByPrice.begin(),sortedByPrice.begin(),Register :: ComparatorPrice);
-    //for(std :: vector <Register &> :: iterator it = sortedByData.begin();it < sortedByData.end();it++)
-    //    (*it).itData = it;
-    //for(std :: vector <Register &> :: iterator it = sortedByID.begin(); it < sortedByID.end(); it++)
-    //    (*it).itID = it;
-    //for(std :: vector <Register &> :: iterator it = sortedByItem.begin(); it < sortedByItem.end(); it++)
-    //    (*it).itItem = it;
-    //for(std :: vector <Register &> :: iterator it = sortedByPrice.begin(); it < sortedByPrice.end();it++)
-    //    (*it).itPrice = it;
+    std :: sort(sortedByID.begin(),sortedByID.end(),Register :: ComparatorID(&data));
+    std :: sort(sortedByPrice.begin(),sortedByPrice.begin(),Register :: ComparatorPrice(&data));
+    for(std :: vector <int> :: iterator it = sortedByID.begin(); it < sortedByID.end();it++)
+        data[*it].itID = it;
+    for(std :: vector <int>)
 }
 void DataBase :: printData() const
 {

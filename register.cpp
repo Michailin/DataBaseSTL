@@ -62,7 +62,7 @@ bool Register ::ComparatorItem :: operator ()(int i1, int i2) const
         else if(((*data)[i1].item)[i] > ((*data)[i2].item)[i])
             return false;
     }
-   if(((*data)[i1].item).length() > ((*data)[i2].item).length())
+   if(((*data)[i1].item).length() < ((*data)[i2].item).length())
        return true;
    else
         return false;

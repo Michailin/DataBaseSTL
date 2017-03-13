@@ -11,10 +11,10 @@ private:
     double price;
     char data[12];
 public:
-   int indexUserID = 0;
-   int indexItem = 0;
-   int indexPrice = 0;
-   int indexData = 0;
+    std :: vector <int> :: iterator itID;
+    std :: vector <int> :: iterator itItem;
+    std :: vector <int> :: iterator itPrice;
+    std :: vector <int> :: iterator itData;
 public:
     Register():
         user_id(0),
